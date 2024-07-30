@@ -13,11 +13,17 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 # matplotlib.use('TkAgg')
 from matplotlib import pyplot as plt
 import math
+import pandas as pd
 from math import sqrt
 from math import pi
 from math import atan
 
-
+sigma_x = 0
+sigma_y = 0
+tau_xy = 0
+sigma_max = 0
+sigma_min = 0
+beta = 0
 def calcular_tensoes_uniformes():
     modulo_elasticidade = float(entrada_modulo.get())
     poisson = float(entrada_poisson.get())
@@ -445,6 +451,16 @@ def calculo_n_uniforme(modulo_elasticidade, poisson, diametro_furo, tipo_roseta,
 
     mensagem = f"Tensões uniformes calculadas:\n\nTensão Longitudinal: {sigma_x}\nTensão Transversal: {sigma_y}\nTensão de Cisalhamento: {tau_xy}\nTensão Principal Máxima: {sigma_max}\nTensão Principal Mínima: {sigma_min}\nÂngulo Beta: {beta}"
 
+    # sigma_x2 = []
+    # for i in sigma_x:
+    #     i = float(i)
+    #     sigma_x2.append(i)
+    # txt = open("resultado_" + filename, "w+")
+    # for i in sigma_x2:
+    #     linha = str(f'{i:.2f}')
+    #     txt.write(linha + " ")
+    # txt.close()
+
     resultado.config(text=mensagem)
 
     graf1.mainloop()
@@ -819,3 +835,4 @@ resultado.pack(pady=10)
 
 # Execução da janela principal
 janela.mainloop()
+

@@ -1,0 +1,6 @@
+sigma_x
+sigma_y
+tau_xy
+sigma_max
+sigma_min
+beta
